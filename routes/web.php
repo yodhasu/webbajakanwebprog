@@ -53,15 +53,15 @@ Route::get('/dashboard', function () {
 
     // If the user is not authenticated or not verified, show the home page with a message
     return (new MovieController)->home();
-})->name('home');
+})->name('dashboard');
 
 // Protected routes that require authentication and email verification
-Route::middleware(['auth', 'verified'])->group(function () {
-    // Dashboard route for verified users
-    Route::get('/dashboard', function () {
-        return (new MovieController)->home(); // Replace with your actual dashboard view
-    })->name('dashboard');
-});
+// Route::middleware(['auth', 'verified'])->group(function () {
+//     // Dashboard route for verified users
+//     Route::get('/dashboard/logged-in', function () {
+//         return (new MovieController)->home(); // Replace with your actual dashboard view
+//     })->name('dashboard.protected');
+// });
 
 // Movie details route
 Route::get('/movie/{id}', function ($id) {
