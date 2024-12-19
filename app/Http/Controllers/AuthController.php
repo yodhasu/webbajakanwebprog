@@ -22,13 +22,15 @@ class AuthController extends Controller
             'password' => 'required|string|min:8|confirmed',
         ]);
 
-        User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect()->route('login')->with('success', 'Registration successful. Please log in.');
+        $user ->sendEmailVerificationNotification();
+
+        return redirect()->route('verification.notice');
     }
 
     public function showLogin()
@@ -43,6 +45,14 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
 
+        $user = $request->user();
+
+        if ($user && !$user->hasVerifiedEmail()) {
+            $user->sendEmailVerificationNotification();
+            return redirect()->route('verification.notice')->withErrors(['email' => 'Your email address is not verified. A new verification link has been sent.']);
+        }
+        
+        
         if (Auth::attempt($request->only('email', 'password'))) {
             return redirect()->route('dashboard');
         }
