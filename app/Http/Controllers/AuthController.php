@@ -45,16 +45,22 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
 
-        $user = $request->user();
-
-        if ($user && !$user->hasVerifiedEmail()) {
-            $user->sendEmailVerificationNotification();
-            return redirect()->route('verification.notice')->withErrors(['email' => 'Your email address is not verified. A new verification link has been sent.']);
-        }
-        
-        
+        // Attempt to authenticate the user
         if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect()->route('dashboard.protected');
+            $user = Auth::user();
+
+            // Check if the user's email is verified
+            if (!$user->hasVerifiedEmail()) {
+                $user->sendEmailVerificationNotification(); // Send a new verification email
+                return redirect()
+                    ->route('verification.notice')
+                    ->withErrors([
+                        'email' => 'Your email address is not verified. A new verification link has been sent.',
+                    ]);
+            }
+
+            // Redirect to the dashboard if the email is verified
+            return redirect()->route('dashboard');
         }
 
         return back()->withErrors(['email' => 'Invalid credentials']);

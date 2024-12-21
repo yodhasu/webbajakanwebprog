@@ -47,21 +47,21 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Public route - anyone can access, even if not logged in
 Route::get('/dashboard', function () {
     // If the user is authenticated and has a verified email, show the movie listings
-    if (Auth::check() && Auth::user()->hasVerifiedEmail()) {
-        return (new MovieController)->home();
-    }
+    // if (Auth::check() && Auth::user()->hasVerifiedEmail()) {
+    //     return (new MovieController)->home();
+    // }
 
     // If the user is not authenticated or not verified, show the home page with a message
     return (new MovieController)->home();
 })->name('dashboard');
 
 // Protected routes that require authentication and email verification
-Route::middleware(['auth', 'verified'])->group(function () {
-    // Dashboard route for verified users
-    Route::get('/dashboard/logged-in', function () {
-        return (new MovieController)->home(); // Replace with your actual dashboard view
-    })->name('dashboard.protected');
-});
+// Route::middleware(['auth', 'verified'])->group(function () {
+//     // Dashboard route for verified users
+//     Route::get('/dashboard/logged-in', function () {
+//         return (new MovieController)->home(); // Replace with your actual dashboard view
+//     })->name('dashboard.protected');
+// });
 
 // Movie details route
 // nigger
