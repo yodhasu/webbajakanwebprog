@@ -64,6 +64,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 // Movie details route
+// nigger
 Route::get('/movie/{id}', function ($id) {
     return (new MovieController)->show($id);
 })->name('movie.show');
