@@ -65,6 +65,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 // Movie details route
 // nigger
+// yodhasu commit
 Route::get('/movie/{id}', function ($id) {
     return (new MovieController)->show($id);
 })->name('movie.show');
