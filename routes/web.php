@@ -56,12 +56,12 @@ Route::get('/dashboard', function () {
 })->name('dashboard');
 
 // Protected routes that require authentication and email verification
-// Route::middleware(['auth', 'verified'])->group(function () {
-//     // Dashboard route for verified users
-//     Route::get('/dashboard/logged-in', function () {
-//         return (new MovieController)->home(); // Replace with your actual dashboard view
-//     })->name('dashboard.protected');
-// });
+Route::middleware(['auth', 'verified'])->group(function () {
+    // Dashboard route for verified users
+    Route::get('/dashboard/logged-in', function () {
+        return (new MovieController)->home(); // Replace with your actual dashboard view
+    })->name('dashboard.protected');
+});
 
 // Movie details route
 Route::get('/movie/{id}', function ($id) {
