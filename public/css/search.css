@@ -3,8 +3,9 @@ form.example input[type=text] {
     padding: 10px;
     font-size: 17px;
     border: 1px solid grey;
-    float: left;
-    width: 80%;
+    /* float: left; */
+    /* width: 80%; */
+    display: inline-block;
     background: #f1f1f1;
 }
   
@@ -36,3 +37,40 @@ form.example::after {
     background-color: #131515;
     height: 12em;
 }
+
+.header-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  #search-form {
+    display: flex;
+    align-items: center;
+  }
+  
+  #search-form .form-control {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+  }
+  
+  #search-form .form-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  #search-form input::placeholder {
+    color: #999;
+  }
+  
+  #search-form input:focus,
+  #search-form select:focus {
+    border-color: #5cb85c;
+  }

@@ -79,7 +79,7 @@ input {
 select,
 button {
   font: inherit;
-  background: none;
+  background: white;
   border: none;
   cursor: pointer;
 }

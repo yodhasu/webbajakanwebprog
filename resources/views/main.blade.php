@@ -14,63 +14,6 @@
   <link rel="stylesheet" href="{{ asset('css/search.css') }}">
   @yield('css')
   @yield('js')
-
-<style>
-.search-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-}
-
-.search-container {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.search-input {
-  padding: 10px 15px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  flex-grow: 1;
-  min-width: 200px;
-}
-
-.search-select {
-  padding: 10px 15px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
-  cursor: pointer;
-}
-
-.search-button {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.search-button i {
-  font-size: 18px;
-}
-
-.search-button:hover {
-  background-color: #0056b3;
-}
-</style>
-
 </head>
 
 <body id="top">
@@ -81,31 +24,26 @@
         <img src="{{ asset('img/dartlogo.png') }}">
       </a>
       <div class="header-actions">
-      
-<form class="search-form" action="/search" method="GET">
-  <div class="search-container">
-    <input 
-      type="text" 
-      name="query" 
-      class="search-input" 
-      placeholder="Search for movies or anime..." 
-      required>
-    <select 
-      name="type" 
-      id="search-type" 
-      class="search-select">
-      <option value="movie">Movie</option>
-      <option value="anime">Anime</option>
-    </select>
-    <button 
-      type="submit" 
-      class="search-button">
-      <i class="fa fa-search"></i> Search
-    </button>
-  </div>
-</form>
-
-      
+        <form class="example" action="/search" method="GET" id="search-form">
+          <input type="text" class="form-control" placeholder="Search.." name="query">
+          <select name="type" id="search-type" class="form-select">
+            <option value="movie">Movie</option>
+            <option value="anime">Anime</option>
+          </select>
+        </form>
+        <!-- <div class="dropdown">
+          <button class="dropbtn">Category</button>
+          <div class="dropdown-content">
+            <a href="#" onclick="setSearchType('movie')">Movie</a>
+            <a href="#" onclick="setSearchType('anime')">Anime</a>
+          </div>
+        </div>
+        <script>
+          function setSearchType(type) {
+            document.getElementById('hidden-search-type').value = type;
+          }
+        </script> -->
+        
         @if(Auth::check() && Auth::user()->hasVerifiedEmail())
           <!-- If user is authenticated and verified, show logout button -->
           <form action="{{ route('logout') }}" method="POST" style="display: inline;">
