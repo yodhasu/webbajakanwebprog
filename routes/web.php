@@ -1,8 +1,10 @@
 <?php
 
+// Updated web.php
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Http\Request;
 use App\Http\Controllers\MovieController;
 
@@ -44,14 +46,18 @@ Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+// Password reset routes
+Route::get('/password/reset', [AuthController::class, 'showPasswordRequestForm'])->name('password.request');
+Route::post('/password/email', [AuthController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('/password/reset/{token}', [AuthController::class, 'showResetForm'])->name('password.reset');
+Route::post('/password/reset', [AuthController::class, 'resetPassword'])->name('password.update');
+
 // Public route - anyone can access, even if not logged in
 Route::get('/dashboard', function () {
     return (new MovieController)->home();
 })->name('dashboard');
 
 // Movie details route
-// nigger
-// yodhasu commit
 Route::get('/movie/{id}', function ($id) {
     return (new MovieController)->show($id);
 })->name('movie.show');
