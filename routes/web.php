@@ -68,3 +68,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::get('/movie/{id}', function ($id) {
     return (new MovieController)->show($id);
 })->name('movie.show');
+
+Route::post('/movie/{id}/comment', [MovieController::class, 'addComment'])->name('movie.addComment');
+
+
+
