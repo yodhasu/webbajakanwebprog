@@ -62,3 +62,5 @@ Route::get('/movie/{id}', function ($id) {
 })->name('movie.show');
 
 Route::get('/search', [SearchController::class, 'search']);
+
+Route::post('/movie/{id}/comment', [MovieController::class, 'addComment'])->name('movie.addComment');
