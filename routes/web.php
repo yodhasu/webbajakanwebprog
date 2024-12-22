@@ -2,11 +2,10 @@
 
 // Updated web.php
 use App\Http\Controllers\AuthController;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Password;
 use Illuminate\Http\Request;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\SearchController;
 
 Route::get('/', function(){
     return redirect('/dashboard');
@@ -61,3 +60,5 @@ Route::get('/dashboard', function () {
 Route::get('/movie/{id}', function ($id) {
     return (new MovieController)->show($id);
 })->name('movie.show');
+
+Route::get('/search', [SearchController::class, 'search']);
