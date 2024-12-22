@@ -46,4 +46,31 @@
         </iframe>
     </div>
 
+
+    <div class="comments-section">
+        <h3>Comments</h3>
+        @foreach ($comments as $comment)
+            <div class="comment">
+                <p><strong>{{ $comment->user->name }}:</strong> {{ $comment->content }}</p>
+                <p><small>Posted on {{ $comment->created_at->diffForHumans() }}</small></p>
+            </div>
+        @endforeach
+
+        @auth
+        <<form action="{{ route('movie.addComment', $movie['id']) }}" method="POST">
+            @csrf  <!-- CSRF Token for security -->
+            
+            <div class="form-group">
+                <label for="content">Your Comment:</label>
+                <textarea id="content" name="content" rows="4" class="form-control" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary mt-2">Submit Comment</button>
+        </form>
+        @else
+        <p>Please <a href="{{ route('login') }}">login</a> to add a comment.</p>
+        @endauth
+
+    </div>
+</div>
 @endsection
