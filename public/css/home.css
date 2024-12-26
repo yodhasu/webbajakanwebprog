@@ -1,43 +1,151 @@
-.trending-movies {
+/**************************************************
+  HERO SECTION 
+***************************************************/
+.hero {
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
     display: flex;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    scroll-behavior: smooth; /* Smooth scrolling effect */
-    padding: 5px; /* Optional: Add some padding */
+    align-items: center;
+    position: relative;
+    text-shadow: 2px 2px 4px #000;
 }
 
+.hero-content {
+    margin-top: 60px;
+    /* adjust as needed */
+    text-shadow: 2px 2px 4px #000;
+}
+
+/**************************************************
+    INFO / SECTION WRAPPER
+  ***************************************************/
+/* A different black tone (#1B1B1B) so it stands out 
+     from the rest of the site’s background */
+.info {
+    background: #1B1B1B;
+    margin-top: 30px;
+    padding: 40px 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Section title */
+.info h1 {
+    font-size: var(--fs-4);
+    /* or a numeric value if not using vars */
+    color: var(--citrine);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--citrine);
+}
+
+/**************************************************
+    CAROUSEL & ARROWS
+  ***************************************************/
+.carousel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    /* spacing below each carousel */
+}
+
+.arrow {
+    background-color: var(--dartgreenstrong);
+    color: var(--white);
+    border: none;
+    font-size: 20px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.arrow:hover {
+    background-color: var(--citrine);
+    color: var(--raisin-black);
+}
+
+/**************************************************
+    TRENDING MOVIES WRAPPER
+  ***************************************************/
+/* Slightly different background from .info to create contrast */
+.trending-movies {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px;
+    /* more padding for breathing room */
+    background: #222;
+    /* distinct black shade from .info */
+    border-radius: 4px;
+}
+
+/* Custom scrollbar (optional) */
 .trending-movies::-webkit-scrollbar {
-    height: 8px; /* Adjust scrollbar height */
+    height: 8px;
 }
 
 .trending-movies::-webkit-scrollbar-thumb {
-    background-color: #888; /* Customize scrollbar color */
-    border-radius: 4px; /* Rounded edges for scrollbar */
+    background-color: #444;
+    border-radius: 4px;
 }
 
 .trending-movies::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Darker color on hover */
+    background-color: #666;
 }
 
+/**************************************************
+    MOVIE CARD
+  ***************************************************/
+/* More spacing between cards: margin or a gap approach */
 .trending-movie {
-    flex: 0 0 auto; /* Prevent items from shrinking or growing */
-    width: 200px; /* Adjust item width */
+    flex: 0 0 auto;
+    width: 180px;
+    /* slightly narrower if you want more items in view */
     text-align: center;
+    margin: 0 15px;
+    /* horizontal spacing around each card */
+    transition: transform 0.3s;
 }
 
-.info{
-    background-color: #2B2C28;
+.trending-movie:first-child {
+    margin-left: 0;
+    /* or keep 15px if you like symmetrical spacing */
 }
 
-.info h1{
-    font-size: 2em;
-    padding: 2em;
+.trending-movie:last-child {
+    margin-right: 0;
 }
 
-.bottom{
+.trending-movie:hover {
+    transform: scale(1.05);
+}
+
+/* Poster image */
+.trending-movie-poster {
+    border-radius: 6px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Movie title */
+.trending-movie-title {
+    font-size: var(--fs-8);
+    color: var(--white);
+    margin-bottom: 5px;
+}
+
+/**************************************************
+    BOTTOM SPACING
+  ***************************************************/
+.bottom {
     padding-bottom: 2em;
-}
-
-.recentReleases h3{
-    color: white;
-    text-decoration: none;
 }

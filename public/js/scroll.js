@@ -1,9 +1,15 @@
 function scrollLeft(containerId) {
     const container = document.getElementById(containerId);
-    container.scrollBy({ left: -300, behavior: 'smooth' }); // Scroll left by 300px
+    container.scroll({
+        left: container.scrollLeft - 300,
+        behavior: 'smooth'
+    });
 }
 
 function scrollRight(containerId) {
     const container = document.getElementById(containerId);
-    container.scrollBy({ left: 300, behavior: 'smooth' }); // Scroll right by 300px
+    container.scroll({
+        left: container.scrollLeft + 300,
+        behavior: 'smooth'
+    });
 }

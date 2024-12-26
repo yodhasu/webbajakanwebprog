@@ -12,6 +12,5 @@
         @csrf
         <button type="submit">Click here to request another</button>
     </form>
-
 </body>
 </html>

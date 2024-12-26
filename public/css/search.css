@@ -1,76 +1,90 @@
 /* Style the search field */
 form.example input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    /* float: left; */
-    /* width: 80%; */
-    display: inline-block;
-    background: #f1f1f1;
-}
-  
-/* Style the submit button */
-form.example button {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    background: #339989;
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none; /* Prevent double borders */
-    cursor: pointer;
-}
-  
-form.example button:hover {
-    background: #7DE2D1;
-}
-  
-  /* Clear floats */
-form.example::after {
-    content: "";
-    clear: both;
-    display: table;
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  /* float: left; */
+  /* width: 80%; */
+  display: inline-block;
+  background: #f1f1f1;
 }
 
-.header{
-    background-color: #131515;
-    height: 12em;
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #339989;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #7DE2D1;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.header {
+  background-color: #131515;
+  height: 12em;
+  /* Keep the height as is */
+  position: fixed;
+  /* Make the header stay at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Ensure the header spans the full width */
+  z-index: 1000;
+  /* Place it above other content */
 }
 
 .header-actions {
-    display: flex;
-    align-items: center;
-  }
-  
-  #search-form {
-    display: flex;
-    align-items: center;
-  }
-  
-  #search-form .form-control {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-    outline: none;
-  }
-  
-  #search-form .form-select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-left: none;
-    border-radius: 0 4px 4px 0;
-    outline: none;
-    background-color: #fff;
-    cursor: pointer;
-  }
-  
-  #search-form input::placeholder {
-    color: #999;
-  }
-  
-  #search-form input:focus,
-  #search-form select:focus {
-    border-color: #5cb85c;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Space out elements in the header */
+  padding: 0 1em;
+  /* Add horizontal padding for spacing */
+}
+
+#search-form {
+  display: flex;
+  align-items: center;
+}
+
+#search-form .form-control {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+#search-form .form-select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  outline: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+#search-form input::placeholder {
+  color: #999;
+}
+
+#search-form input:focus,
+#search-form select:focus {
+  border-color: #5cb85c;
+}

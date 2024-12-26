@@ -7,7 +7,7 @@
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @endsection
-
+ 
 @section('content')
 <div class="container">
     <h1>Search Results for "{{ request('query') }}"</h1>

@@ -63,3 +63,110 @@
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
+
+/* Logic for Movie Comment Section */
+/* COMMENTS SECTION WRAPPER */
+.comments-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--dartgrey);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px hsla(0, 0%, 0%, 0.3);
+}
+
+/* SECTION TITLE */
+.comments-section h3 {
+    margin-bottom: 15px;
+    color: var(--citrine);
+    font-size: var(--fs-5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* INDIVIDUAL COMMENT BLOCK */
+.comment {
+    background-color: var(--gunmetal-2);
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--citrine);
+    /* Adds a small color accent */
+    transition: background-color var(--transition-1);
+}
+
+/* Comment text styling */
+.comment p {
+    margin-bottom: 5px;
+    color: var(--light-gray);
+    line-height: 1.5;
+    font-size: var(--fs-8);
+}
+
+/* Emphasize the user’s name */
+.comment strong {
+    color: var(--white);
+    font-weight: var(--fw-700);
+}
+
+/* Subtext: e.g. 'Posted on 2 days ago' */
+.comment small {
+    font-size: var(--fs-9);
+    color: var(--gray-x);
+}
+
+/* COMMENT FORM */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--citrine);
+    font-size: var(--fs-9);
+    text-transform: uppercase;
+    font-weight: var(--fw-700);
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: var(--raisin-black);
+    color: var(--white);
+    border: none;
+    resize: vertical;
+    font-size: var(--fs-9);
+}
+
+/* SUBMIT BUTTON (SAME STYLE AS YOUR PRIMARY BUTTONS) */
+.btn.btn-primary.mt-2 {
+    margin-top: 10px;
+    background-color: var(--dartgreenstrong);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: var(--fs-9);
+    cursor: pointer;
+    transition: var(--transition-1);
+}
+
+.btn.btn-primary.mt-2:hover {
+    background-color: var(--citrine);
+    color: var(--raisin-black);
+}
+
+/* LOGIN MESSAGE & LINK */
+.comments-section p {
+    margin-bottom: 6px;
+    color: var(--gray-x);
+    font-size: var(--fs-8);
+}
+
+.comments-section a {
+    color: var(--citrine);
+    text-decoration: underline;
+    transition: var(--transition-1);
+}
+
+.comments-section a:hover {
+    color: var(--white);
+    text-decoration: none;
+}

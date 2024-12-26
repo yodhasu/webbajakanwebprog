@@ -32,51 +32,70 @@
 </section>
 
 <div class="info">
-    <h1>In Theaters</h1>
-    <div class="carousel">
-        <button class="arrow left-arrow" onclick="scrollLeft('recentReleases')">&lt;</button>
-        <div id="recentReleases" class="trending-movies">
-            @foreach ($inTheaters as $movie)
-                <a href="{{ route('movie.show', ['id' => $movie['id']]) }}">
-                    <div class="trending-movie">
-                        <img src="https://image.tmdb.org/t/p/w500{{ $movie['poster_path'] }}" alt="{{ $movie['title'] }}" class="trending-movie-poster">
-                        <h3 class="trending-movie-title">{{ $movie['title'] }}</h3>
-                    </div>
-                </a>
-            @endforeach
-        </div>
-        <button class="arrow right-arrow" onclick="scrollRight('recentReleases')">&gt;</button>
+  <!-- In Theaters -->
+  <h1>In Theaters</h1>
+  <div class="carousel">
+    <button class="arrow left-arrow" onclick="scrollLeft('recentReleases')">&lt;</button>
+    <div id="recentReleases" class="trending-movies">
+      @foreach ($inTheaters as $movie)
+        <a href="{{ route('movie.show', ['id' => $movie['id']]) }}">
+          <div class="trending-movie">
+            <img
+              src="https://image.tmdb.org/t/p/w500{{ $movie['poster_path'] }}"
+              alt="{{ $movie['title'] }}"
+              class="trending-movie-poster"
+            >
+            <h3 class="trending-movie-title">{{ $movie['title'] }}</h3>
+          </div>
+        </a>
+      @endforeach
     </div>
-    <h1>Trending Now</h1>
-    <div class="carousel">
-        <button class="arrow left-arrow" onclick="scrollLeft('recentReleases')">&lt;</button>
-        <div id="trendingMovies" class="trending-movies">
-            @foreach ($trending as $movie)
-                <a href="{{ route('movie.show', ['id' => $movie['id']]) }}">
-                    <div class="trending-movie">
-                        <img src="https://image.tmdb.org/t/p/w500{{ $movie['poster_path'] }}" alt="{{ $movie['title'] }}" class="trending-movie-poster">
-                        <h3 class="trending-movie-title">{{ $movie['title'] }}</h3>
-                    </div>
-                </a>
-            @endforeach
-        </div>
-        <button class="arrow right-arrow" onclick="scrollRight('recentReleases')">&gt;</button>
+    <button class="arrow right-arrow" onclick="scrollRight('recentReleases')">&gt;</button>
+  </div>
+
+  <!-- Trending Now -->
+  <h1>Trending Now</h1>
+  <div class="carousel">
+    <button class="arrow left-arrow" onclick="scrollLeft('trendingMovies')">&lt;</button>
+    <div id="trendingMovies" class="trending-movies">
+      @foreach ($trending as $movie)
+        <a href="{{ route('movie.show', ['id' => $movie['id']]) }}">
+          <div class="trending-movie">
+            <img
+              src="https://image.tmdb.org/t/p/w500{{ $movie['poster_path'] }}"
+              alt="{{ $movie['title'] }}"
+              class="trending-movie-poster"
+            >
+            <h3 class="trending-movie-title">{{ $movie['title'] }}</h3>
+          </div>
+        </a>
+      @endforeach
     </div>
-    <h1>Top Movies</h1>
-    <div class="carousel">
-        <button class="arrow left-arrow" onclick="scrollLeft('recentReleases')">&lt;</button>
-        <div id="topRatedMovies" class="trending-movies">
-            @foreach ($topRated as $movie)
-                <a href="{{ route('movie.show', ['id' => $movie['id']]) }}">
-                    <div class="trending-movie">
-                        <img src="https://image.tmdb.org/t/p/w500{{ $movie['poster_path'] }}" alt="{{ $movie['title'] }}" class="trending-movie-poster">
-                        <h3 class="trending-movie-title">{{ $movie['title'] }}</h3>
-                    </div>
-                </a>    
-            @endforeach
-        </div>
-        <button class="arrow right-arrow" onclick="scrollRight('recentReleases')">&gt;</button>
+    <button class="arrow right-arrow" onclick="scrollRight('trendingMovies')">&gt;</button>
+  </div>
+
+  <!-- Top Movies -->
+  <h1>Top Movies</h1>
+  <div class="carousel">
+    <button class="arrow left-arrow" onclick="scrollLeft('topRatedMovies')">&lt;</button>
+    <div id="topRatedMovies" class="trending-movies">
+      @foreach ($topRated as $movie)
+        <a href="{{ route('movie.show', ['id' => $movie['id']]) }}">
+          <div class="trending-movie">
+            <img
+              src="https://image.tmdb.org/t/p/w500{{ $movie['poster_path'] }}"
+              alt="{{ $movie['title'] }}"
+              class="trending-movie-poster"
+            >
+            <h3 class="trending-movie-title">{{ $movie['title'] }}</h3>
+          </div>
+        </a>
+      @endforeach
     </div>
+    <button class="arrow right-arrow" onclick="scrollRight('topRatedMovies')">&gt;</button>
+  </div>
+</div>
+
     <div class="bottom"></div>
 </div>
 
