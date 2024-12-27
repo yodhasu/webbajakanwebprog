@@ -20,7 +20,8 @@
       "DB_PORT": "3307",
       "DB_DATABASE": "webprogaol_largermeat",
       "DB_USERNAME": "webprogaol_largermeat",
-      "DB_PASSWORD": "9f230cc899fd6071d76c7b907b87f1b3eeccac31"
+      "DB_PASSWORD": "9f230cc899fd6071d76c7b907b87f1b3eeccac31",
+      "CACHE_PATH": "/tmp/laravel/cache"
     }
   }
   
