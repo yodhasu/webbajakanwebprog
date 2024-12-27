@@ -1,27 +1,39 @@
 {
     "version": 2,
     "builds": [
-      { "src": "api/index.php", "use": "vercel-php@0.6.0" },
-      { "src": "public/**", "use": "@vercel/static" }
+        { "src": "/api/index.php", "use": "vercel-php@0.6.0" },
+        { "src": "/public/**", "use": "@vercel/static" }
     ],
+  
+    "name": "dart",
+  
     "routes": [
-      { "src": "/(css|js|images|fonts)/(.*)", "dest": "public/$1/$2" },
-      { "src": "/(.*)", "dest": "api/index.php" }
+        {
+            "src": "/(css|js)/(.*)",
+            "dest": "public/$1/$2"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
     ],
-    "buildCommand": "composer install --no-dev && php artisan key:generate && php artisan config:cache && npm install && npm run build",
+  
+
+    "buildCommand": "npm install && npm run build",
+
     "outputDirectory": "public",
+
     "env": {
       "APP_ENV": "production",
       "APP_DEBUG": "true",
-      "APP_URL": "https://dartwebprog.vercel.app",
+      "APP_URL": "https://dartwebprog.vercel.app", 
       "APP_KEY": "base64:+wfdwxrn1oIWawkOObFTMq5/mMhFQZg1/3t+fczeUcw=",
+  
       "DB_CONNECTION": "mysql",
       "DB_HOST": "pl4to.h.filess.io",
       "DB_PORT": "3307",
       "DB_DATABASE": "webprogaol_largermeat",
       "DB_USERNAME": "webprogaol_largermeat",
-      "DB_PASSWORD": "9f230cc899fd6071d76c7b907b87f1b3eeccac31",
-      "CACHE_PATH": "/tmp/laravel/cache"
+      "DB_PASSWORD": "9f230cc899fd6071d76c7b907b87f1b3eeccac31"
     }
   }
-  
