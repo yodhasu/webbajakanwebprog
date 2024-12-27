@@ -31,8 +31,8 @@
 
     "env": {
       "APP_ENV": "production",
-      "APP_DEBUG": "false",
-      "APP_URL": "https://your-project.vercel.app", 
+      "APP_DEBUG": "true",
+      "APP_URL": "https://dartwebprog.vercel.app", 
       "APP_KEY": "base64:+wfdwxrn1oIWawkOObFTMq5/mMhFQZg1/3t+fczeUcw=",
   
       "DB_CONNECTION": "mysql",
