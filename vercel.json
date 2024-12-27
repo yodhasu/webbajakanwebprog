@@ -7,7 +7,7 @@
       { "src": "/build/(.*)", "dest": "/public/build/$1" },
       { "src": "/(.*)", "dest": "/api/index.php" }
     ],
-    "buildCommand": "curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer && composer install --no-dev && php artisan key:generate && php artisan config:cache && php artisan route:cache && php artisan view:cache && npm install && npm run build",
+    "buildCommand": "bash build.sh",
     "outputDirectory": "public",
     "env": {
       "APP_ENV": "production",
