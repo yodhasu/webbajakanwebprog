@@ -12,4 +12,3 @@ php artisan route:cache
 php artisan view:cache
 npm install
 npm run build
-
