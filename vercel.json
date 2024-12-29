@@ -31,7 +31,7 @@
       "APP_ENV": "production",
       "APP_DEBUG": "false",
       "APP_URL": "https://dartwebprog.vercel.app", 
-      "APP_KEY": "base64:+wfdwxrn1oIWawkOObFTMq5/mMhFQZg1/3t+fczeUcw=",
+      "APP_KEY": "base64:IUXnBNLF2m8xsNkfkNzNM/fjnPLwK4FH1Rqvcs7ScEw=",
   
       "DB_CONNECTION": "mysql",
       "DB_HOST": "pl4to.h.filess.io",
