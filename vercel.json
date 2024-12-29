@@ -6,10 +6,18 @@
     }
   },
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "api/index.php"
-    }
+        {
+            "src": "/(css|js|img)/(.*)",
+            "dest": "public/$1/$2"
+        },
+        {
+            "src": "/email/verify/(.*)",
+            "dest": "/api/index.php"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
   ],
   "env": {
     "APP_ENV": "production",
