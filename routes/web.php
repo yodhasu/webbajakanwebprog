@@ -18,14 +18,31 @@ Route::get('/email/verify', function () {
 
 // Verification routes for email
 Route::get('/email/verify/{id}/{hash}', function (Request $request, $id, $hash) {
-    $user = $request->user();
+    // Debugging information
+    dump('Email verification process started', [
+        'user_id' => $id,
+        'hash' => $hash,
+        'request_hash' => sha1($request->user()->getEmailForVerification())
+    ]);
+    
+    $user = \App\Models\User::findOrFail($id);
+
+    if (!hash_equals((string) $hash, sha1($user->getEmailForVerification()))) {
+        dump('Hash does not match', [
+            'provided_hash' => $hash,
+            'expected_hash' => sha1($user->getEmailForVerification())
+        ]);
+        return abort(403);
+    }
 
     if ($user->hasVerifiedEmail()) {
+        dump('User already verified', ['user_id' => $id]);
         return redirect()->route('dashboard');
     }
 
     if ($user->markEmailAsVerified()) {
         event(new \Illuminate\Auth\Events\Verified($user));
+        dump('User email verified', ['user_id' => $id]);
     }
 
     return redirect()->route('dashboard')->with('verified', true);
