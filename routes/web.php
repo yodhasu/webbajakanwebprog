@@ -18,7 +18,7 @@ Route::get('/email/verify', function () {
 
 // Verification routes for email
 Route::get('/email/verify/{id}/{hash}', function (Request $request, $id, $hash) {
-    dump($request->all());
+    // dump($request->all());
     $user = $request->user();
 
     if ($user->hasVerifiedEmail()) {
