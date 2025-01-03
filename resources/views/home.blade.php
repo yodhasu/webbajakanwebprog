@@ -18,8 +18,6 @@
         var width = window.innerWidth;
         if (width <= 768) {
             window.location.href = "/mobile-view";
-        } else {
-            window.location.href = "/desktop-view";
         }
     });
 </script>
