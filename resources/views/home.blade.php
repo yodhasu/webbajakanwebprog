@@ -13,16 +13,15 @@
 <script src="js/scroll.js"></script>
 
 <script>
-    window.onload = function() {
+    document.addEventListener("DOMContentLoaded", function() {
+        // Your code here
         var width = window.innerWidth;
-
-        // Check screen resolution and redirect accordingly
-        if (width <= 1024) {
-            window.location.href = "/mobile-view";  // Redirect to mobile-specific view
+        if (width <= 768) {
+            window.location.href = "/mobile-view";
         } else {
-            window.location.href = "/desktop-view"; // Redirect to desktop-specific view
+            window.location.href = "/desktop-view";
         }
-    };
+    });
 </script>
 @endsection
 
