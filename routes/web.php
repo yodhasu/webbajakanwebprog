@@ -11,6 +11,10 @@ Route::get('/', function(){
     return redirect('/dashboard');
 });
 
+Route::get('/mobile-view', function(){
+    return redirect('https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran');
+});
+
 // Add the verification.notice route
 Route::get('/email/verify', function () {
     return view('auth.verify');
