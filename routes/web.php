@@ -67,6 +67,6 @@ Route::get('/search', [SearchController::class, 'search']);
 Route::post('/movie/{id}/comment', [MovieController::class, 'addComment'])->name('movie.addComment');
 
 // coming soon
-Route::get('/coming_soon', function(){
-    return view("comming_soon");
-})->name('comingsoon');
+Route::get('/comingsoon', function(){
+    return view("comingsoon");
+});
