@@ -27,6 +27,7 @@
         <form class="example" action="/search" method="GET" id="search-form">
           <input type="text" class="form-control" placeholder="Search.." name="query">
           <input type="hidden" name="type" value="movie">
+          <button type="submit"><i class="fa fa-search"></i></button>
         </form>
         <!-- <div class="dropdown">
           <button class="dropbtn">Category</button>

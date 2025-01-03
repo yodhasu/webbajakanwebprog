@@ -35,7 +35,7 @@
   <!-- In Theaters -->
   <h1>In Theaters</h1>
   <div class="carousel">
-    <button class="arrow left-arrow" onclick="scrollLeft('recentReleases')">&lt;</button>
+    <button class="arrow left-arrow" onclick="scrollToLeft('recentReleases')">&lt;</button>
     <div id="recentReleases" class="trending-movies">
       @foreach ($inTheaters as $movie)
         <a href="{{ route('movie.show', ['id' => $movie['id']]) }}">
@@ -50,7 +50,7 @@
         </a>
       @endforeach
     </div>
-    <button class="arrow right-arrow" onclick="scrollRight('recentReleases')">&gt;</button>
+    <button class="arrow right-arrow" onclick="scrollToRight('recentReleases')">&gt;</button>
   </div>
 
   <!-- Trending Now -->
