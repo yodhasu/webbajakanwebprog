@@ -26,10 +26,7 @@
       <div class="header-actions">
         <form class="example" action="/search" method="GET" id="search-form">
           <input type="text" class="form-control" placeholder="Search.." name="query">
-          <select name="type" id="search-type" class="form-select">
-            <option value="movie">Movie</option>
-            <option value="anime">Anime</option>
-          </select>
+          <input type="hidden" name="type" value="movie">
         </form>
         <!-- <div class="dropdown">
           <button class="dropbtn">Category</button>
@@ -71,8 +68,8 @@
         </div>
         <ul class="navbar-list">
           <li><a class="navbar-link" href="/comingsoon">Recommendation engine</a></li>
-          <li><a class="navbar-link">Community</a></li>
-          <li><a class="navbar-link">Movie Database</a></li>
+          <li><a class="navbar-link" href="/comingsoon">Community</a></li>
+          <li><a class="navbar-link" href="/comingsoon">Movie Database</a></li>
         </ul>
       </nav>
     </div>

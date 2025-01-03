@@ -1,0 +1,13 @@
+.cont{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    padding-inline: 15px;
+    padding-top: 200px;
+}
+
+.cont h1{
+    align-items: center;
+    text-align: center;
+    font-size: x-large;
+}
