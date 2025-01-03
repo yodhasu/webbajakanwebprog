@@ -70,7 +70,7 @@
           </button>
         </div>
         <ul class="navbar-list">
-          <li><a class="navbar-link" href="{{route('comingsoon')}}">Recommendation engine</a></li>
+          <li><a class="navbar-link" href="{{route('coming_soon')}}">Recommendation engine</a></li>
           <li><a class="navbar-link">Community</a></li>
           <li><a class="navbar-link">Movie Database</a></li>
         </ul>
