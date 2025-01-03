@@ -11,6 +11,6 @@
  
 @section('content')
 <div class="cont">
-    <h1>Comming Soon!</h1>
+    <h1>Coming Soon!</h1>
 </div>
 @endsection

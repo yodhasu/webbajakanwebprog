@@ -56,7 +56,7 @@
   <!-- Trending Now -->
   <h1>Trending Now</h1>
   <div class="carousel">
-    <button class="arrow left-arrow" onclick="scrollLeft('trendingMovies')">&lt;</button>
+    <button class="arrow left-arrow" onclick="scrollToLeft('trendingMovies')">&lt;</button>
     <div id="trendingMovies" class="trending-movies">
       @foreach ($trending as $movie)
         <a href="{{ route('movie.show', ['id' => $movie['id']]) }}">
@@ -71,13 +71,13 @@
         </a>
       @endforeach
     </div>
-    <button class="arrow right-arrow" onclick="scrollRight('trendingMovies')">&gt;</button>
+    <button class="arrow right-arrow" onclick="scrollToRight('trendingMovies')">&gt;</button>
   </div>
 
   <!-- Top Movies -->
   <h1>Top Movies</h1>
   <div class="carousel">
-    <button class="arrow left-arrow" onclick="scrollLeft('topRatedMovies')">&lt;</button>
+    <button class="arrow left-arrow" onclick="scrollToLeft('topRatedMovies')">&lt;</button>
     <div id="topRatedMovies" class="trending-movies">
       @foreach ($topRated as $movie)
         <a href="{{ route('movie.show', ['id' => $movie['id']]) }}">
@@ -92,7 +92,7 @@
         </a>
       @endforeach
     </div>
-    <button class="arrow right-arrow" onclick="scrollRight('topRatedMovies')">&gt;</button>
+    <button class="arrow right-arrow" onclick="scrollToRight('topRatedMovies')">&gt;</button>
   </div>
 </div>
 
