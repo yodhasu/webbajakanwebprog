@@ -115,6 +115,7 @@ body.active {
 
 .container {
   padding-inline: 15px;
+  display: block;
 }
 
 /**

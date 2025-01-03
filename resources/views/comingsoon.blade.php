@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('title')
-<title>Search Results for "{{ request('query') }}"</title>
+<title>Coming Soon</title>
 @endsection
 
 @section('css')
